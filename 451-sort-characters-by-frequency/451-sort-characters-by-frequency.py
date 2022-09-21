@@ -1,5 +1,4 @@
 class Solution:
-
     def frequencySort(self, s: str) -> str:
         count = {}
         for char in s:
