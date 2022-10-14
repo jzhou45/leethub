@@ -7,7 +7,6 @@ class Solution:
     def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
         dummy = head
         node = dummy.next
-        node2 = head
         
         counter = 0
         
@@ -26,15 +25,15 @@ class Solution:
             counter2 = (counter + 1) / 2 - 2
             
         while counter2 >= 0:
-            node2 = node2.next
+            dummy = dummy.next
             counter2 -= 1
             
-        if node2.next:
-            if node2.next.next:
-                node2.next = node2.next.next
+        if dummy.next:
+            if dummy.next.next:
+                dummy.next = dummy.next.next
             else:
-                node2.next = None
+                dummy.next = None
         else:
-            node2.next = None
+            dummy.next = None
             
-        return dummy
+        return head
