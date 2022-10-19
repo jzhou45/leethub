@@ -7,8 +7,6 @@ class Solution:
         sorted_count = sorted(count.items(), key=lambda x: (-x[1], x[0]))
     
         
-        print(sorted_count)
-        
         res = []
         
         for i in range(0, k):
