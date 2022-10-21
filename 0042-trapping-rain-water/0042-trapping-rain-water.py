@@ -13,13 +13,11 @@ class Solution:
             max_right_arr.append(max_right)
             max_right = max(max_right, height[j])
         
-        water_trapped = []
+        res = 0
         
         for k in range(len(height)):
             water_height = min(max_left_arr[k], max_right_arr[len(max_right_arr) - 1 - k])
             if water_height - height[k] > 0:
-                water_trapped.append(water_height - height[k])
-            else:
-                water_trapped.append(0)
+                res += (water_height - height[k])
                 
-        return sum(water_trapped)
+        return res
