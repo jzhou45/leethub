@@ -15,6 +15,7 @@ class Solution:
             l = i + 1
             m = l + 1
             r = m + 1
+            return
             
         if flowerbed[0] == 0 and flowerbed[1] == 0:
             flowerbed[0] = 1
