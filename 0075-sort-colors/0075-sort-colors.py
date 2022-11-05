@@ -3,11 +3,14 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        is_sorted = False
+        count = Counter(nums)
         
-        while not is_sorted:
-            is_sorted = True
-            for i in range(len(nums) -1):
-                if nums[i] > nums[i + 1]:
-                    nums[i], nums[i + 1] = nums[i + 1], nums[i]
-                    is_sorted = False
+        for i in range(len(nums)):
+            if count[0] > 0:
+                nums[i] = 0
+                count[0] -= 1
+            elif count[1] > 0:
+                nums[i] = 1
+                count[1] -= 1
+            else:
+                nums[i] = 2
