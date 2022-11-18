@@ -1,6 +1,6 @@
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
-        l, r = 1, max(piles)
+        l, r = math.ceil(sum(piles)/h), max(piles)
         res = float("inf")
         
         while l <= r:
