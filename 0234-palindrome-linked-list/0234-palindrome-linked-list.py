@@ -10,8 +10,10 @@ class Solution:
             arr.append(head.val)
             head = head.next
         
-        for i in range(len(arr) // 2):
-            if arr[i] != arr[-1 - i]:
-                return False
-            
+        l, r = 0, len(arr) - 1
+        while l < r:
+            if arr[l] != arr[r]: return False
+            l += 1
+            r -= 1
+        
         return True
