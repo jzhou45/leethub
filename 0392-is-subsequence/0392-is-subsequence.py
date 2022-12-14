@@ -4,6 +4,6 @@ class Solution:
         if len(t) == 0: return False
         
         if s[0] == t[0]:
-            return self.isSubsequence(s[1:len(s)], t[1:len(t)])
+            return self.isSubsequence(s[1:], t[1:])
         else:
-            return self.isSubsequence(s, t[1:len(t)])
+            return self.isSubsequence(s, t[1:])
