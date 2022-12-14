@@ -1,11 +1,19 @@
 class Solution:
+    
     def isIsomorphic(self, s: str, t: str) -> bool:
-        dict1 = {}
-        dict2 = {}
+        keys = {}
+        values = {}
+        
         for i in range(len(s)):
-            if s[i] not in dict1 and t[i] not in dict2:
-                dict1[s[i]] = t[i]
-                dict2[t[i]] = s[i]
-            elif dict1.get(s[i]) != t[i] or dict2.get(t[i]) != s[i]:
+            s_char = s[i]
+            t_char = t[i]
+            
+            if s_char not in keys and t_char not in values:
+                keys[s_char] = t_char
+                values[t_char] = s_char
+            elif s_char in keys and t_char in values:
+                if keys[s_char] != t_char or s_char != values[t_char]: return False
+            else:
                 return False
+        
         return True
