@@ -9,9 +9,8 @@ class Solution:
         while additionalRocks > 0 and i < len(new):
             if new[i] == 0:
                 res += 1
-            else:
+            elif additionalRocks - new[i] >= 0:
                 additionalRocks -= new[i]
-                if additionalRocks >= 0:
-                    res += 1
+                res += 1
             i += 1
         return res
