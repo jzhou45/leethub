@@ -3,7 +3,7 @@ class Solution:
         l, r = 0, len(p) - 1
         
         res = []
-        count = Counter(sorted(p))
+        count = Counter(p)
         
         while r < len(s):
             if Counter(s[l:r+1]) == count:
