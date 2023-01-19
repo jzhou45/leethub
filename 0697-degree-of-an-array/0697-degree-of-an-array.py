@@ -1,6 +1,5 @@
 class Solution:
     def findShortestSubArray(self, nums: List[int]) -> int:
-        #count, [indices]
         hashmap = {}
         
         for i, num in enumerate(nums):
