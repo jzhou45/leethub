@@ -3,14 +3,14 @@
  * @return {string}
  */
 var frequencySort = function(s) {
-    let arr = []
+    let arr = [];
     for (let i = 0; i < 75; i++){
         arr.push([0, i]);
-    };
+    }
     
     for (let j = 0; j < s.length; j++){
         arr[s.charCodeAt(j) - 48][0] ++;
-    };
+    }
     
     arr.sort((a, b) => {
         if (a[0] > b[0]){
@@ -19,7 +19,7 @@ var frequencySort = function(s) {
             return 1;
         } else{
             return 0
-        };
+        }
     });
     
     let res = "";
@@ -29,8 +29,8 @@ var frequencySort = function(s) {
         if (freq === 0){
             break;
         };
-        res += String.fromCharCode(48 + char).repeat(freq)
-    };
+        res += String.fromCharCode(48 + char).repeat(freq);
+    }
     
     return res;
 };
