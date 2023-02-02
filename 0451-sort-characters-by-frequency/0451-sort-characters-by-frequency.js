@@ -18,7 +18,7 @@ var frequencySort = function(s) {
         } else if (a[0] < b[0]){
             return 1;
         } else{
-            return 0
+            return 0;
         }
     });
     
@@ -28,7 +28,7 @@ var frequencySort = function(s) {
         let [freq, char] = subarr;
         if (freq === 0){
             break;
-        };
+        }
         res += String.fromCharCode(48 + char).repeat(freq);
     }
     
