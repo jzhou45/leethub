@@ -14,7 +14,8 @@ class Solution:
         
         for char in s[1:]:
             last = stack[-1]
-            if stack and ((last == 1 and (char == "V" or char == "X")) or \
+            if stack and \
+            ((last == 1 and (char == "V" or char == "X")) or \
             (last == 10 and (char == "L" or char == "C")) or \
             (last == 100 and (char == "D" or char == "M"))):
                 stack.append(trans[char] - stack.pop())
