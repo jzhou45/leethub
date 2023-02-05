@@ -10,9 +10,7 @@ var simplifyPath = function(path) {
         if (str.length < 1 || str == "."){
             continue;
         } else if (str == ".."){
-            if (arr){
-                arr.pop();
-            }
+            arr.pop();
         } else{
             arr.push(str);
         }
