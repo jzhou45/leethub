@@ -10,4 +10,4 @@ class Solution:
             elif not (len(string) < 1 or string == "." or string == ".."):
                 stack.append(string)
         
-        return f"/{'/'.join(stack)}"
+        return "/%s"%('/'.join(stack))
