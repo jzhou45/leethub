@@ -7,11 +7,9 @@ var simplifyPath = function(path) {
     let arr = [];
     
     for (let str of path){
-        if (str.length < 1 || str == "."){
-            continue;
-        } else if (str == ".."){
+        if (str == ".."){
             arr.pop();
-        } else{
+        } else if (!(str.length < 1 || str == ".")){
             arr.push(str);
         }
     }
