@@ -13,9 +13,4 @@ class Solution:
             else:
                 stack.append(string)
         
-        res = ""
-        
-        for string2 in stack:
-            res += "/" + string2
-        
-        return res if len(res) > 0 else "/"
+        return "/" + "/".join(stack)
