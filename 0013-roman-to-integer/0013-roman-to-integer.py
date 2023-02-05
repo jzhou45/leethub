@@ -1,6 +1,5 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
-        stack = []
         trans = {
             "I": 1,
             "V": 5,
@@ -11,17 +10,12 @@ class Solution:
             "M": 1000
         }
         
-        for char in s:
-            if stack:
-                last = stack[-1]
-                if last == 1 and (char == "V" or char == "X"):
-                    stack.append(trans[char] - stack.pop())
-                elif last == 10 and (char == "L" or char == "C"):
-                    stack.append(trans[char] - stack.pop())
-                elif last == 100 and (char == "D" or char == "M"):
-                    stack.append(trans[char] - stack.pop())
-                else:
-                    stack.append(trans[char])
+        stack = [trans[s[0]]]
+        
+        for char in s[1:]:
+            last = stack[-1]
+            if stack and ((last == 1 and (char == "V" or char == "X")) or (last == 10 and (char == "L" or char == "C")) or (last == 100 and (char == "D" or char == "M"))):
+                stack.append(trans[char] - stack.pop())
             else:
                 stack.append(trans[char])
         
