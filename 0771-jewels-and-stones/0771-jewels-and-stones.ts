@@ -1,5 +1,5 @@
 function numJewelsInStones(jewels: string, stones: string): number {
-    let count = {};
+    let count = new Map<string, number>();
     
     for (let jewel of jewels){
         count[jewel] = 0
@@ -11,6 +11,7 @@ function numJewelsInStones(jewels: string, stones: string): number {
         }
     }
     
-    let arr:number[] = Object.values(count);
-    return arr.reduce((currSum:number, num:number) => currSum + num, 0);
+    // let arr:number[] = Object.values(count);
+    // return arr.reduce((currSum:number, num:number) => currSum + num, 0);
+    return Object.values(count).reduce((currSum:number, num:number) => currSum + num, 0);
 };
