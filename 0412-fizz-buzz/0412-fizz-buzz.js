@@ -3,19 +3,19 @@
  * @return {string[]}
  */
 var fizzBuzz = function(n) {
-    let result = [];
+    const answer = [];
+    
     for (let i = 1; i <= n; i++){
-        // let [threeMod, fiveMod] = [i % 3 === 0, i % 5 === 0];
         if (i % 3 === 0 && i % 5 === 0){
-            result.push("FizzBuzz");
+            answer.push("FizzBuzz");
         } else if (i % 3 === 0){
-            result.push("Fizz");
+            answer.push("Fizz");
         } else if (i % 5 === 0){
-            result.push("Buzz");
-        } else{
-            result.push(i.toString( ));
+            answer.push("Buzz");
+        } else {
+            answer.push(i.toString());
         }
     }
     
-    return result;
-};
+    return answer;
+}
