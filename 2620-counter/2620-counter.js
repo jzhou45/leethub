@@ -4,7 +4,7 @@
  */
 var createCounter = function(n) {
     return function() {
-        n += 1
+        n ++
         return n - 1
     };
 };
