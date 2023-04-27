@@ -8,7 +8,6 @@ def maximum_population(logs)
             hash[ele] += 1
         end
     end
-    p hash
     ans = hash.max_by { |k, v| v }
     ans[0]
 end
