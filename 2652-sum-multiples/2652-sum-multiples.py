@@ -4,7 +4,6 @@ class Solution:
         return sum(list(res))
     
     def helper(self, n, m):
-        if n < m: return set()
         res = set()
         for i in range(m, n + 1, m):
             res.add(i)
