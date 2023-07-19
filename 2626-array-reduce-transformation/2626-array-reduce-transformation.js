@@ -5,6 +5,6 @@
  * @return {number}
  */
 var reduce = function(nums, fn, init) {
-    for (let i of nums) { init = fn(init, i) }
+    for (let i of nums) init = fn(init, i);
     return init;
 };
