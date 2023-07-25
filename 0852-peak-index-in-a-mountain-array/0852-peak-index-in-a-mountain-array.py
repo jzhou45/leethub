@@ -1,5 +1,11 @@
 class Solution:
     def peakIndexInMountainArray(self, arr: List[int]) -> int:
-        for i in range(1, len(arr)):
-            if arr[i - 1] > arr[i]:
-                return i - 1
+        mid = len(arr) // 2
+        print(arr)
+        
+        if len(arr) <= 3:
+            return arr.index(max(arr))
+        elif arr[mid - 1] > arr[mid]:
+            return self.peakIndexInMountainArray(arr[:mid])
+        else:
+            return mid + self.peakIndexInMountainArray(arr[mid:])
