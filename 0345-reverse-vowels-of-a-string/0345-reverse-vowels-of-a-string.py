@@ -4,17 +4,13 @@ class Solution:
         
         vows = set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'])
         
-        for char in s:
+        for i, char in enumerate(s):
             if char in vows:
-                c.append(0)
+                c.append(i)
                 v.append(char)
-            else:
-                c.append(char)
         
-        l = 0
-        for r in range(len(c) - 1, -1, -1):
-            if type(c[r]) == int:
-                c[r] = v[l]
-                l += 1
-            
-        return "".join(c)
+        s = list(s)
+        for j in range(len(c) - 1, -1, -1):
+            s[c[j]] = v[len(c) - j - 1]
+        
+        return "".join(s)
