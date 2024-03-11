@@ -16,20 +16,14 @@ class Solution:
                     if k == 0:
                         max_count = max(max_count,curr_count)
                         curr_count = 0
-                    elif more_than_k:
+                    else:
                         new_start = flipped[0]
                         temp_count = i - new_start
                         max_count = max(max_count, temp_count, curr_count)
                         curr_count = temp_count
                         flipped = flipped[1:]
                         flipped.append(i)
-                    else:
-                        curr_count += 1
-                        flipped.append(i)
-                        if len(flipped) >= k: more_than_k = True
                 else:
                     curr_count += 1
                     
-        max_count = max(curr_count, max_count)
-        
-        return max_count
+        return max(curr_count, max_count)
