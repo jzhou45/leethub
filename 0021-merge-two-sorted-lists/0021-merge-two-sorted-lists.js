@@ -11,27 +11,22 @@
  * @return {ListNode}
  */
 var mergeTwoLists = function(list1, list2) {
-    const ans = new ListNode(); // ans = [1, 1, 2, 3, 4, 4]
-    let dummy = ans; 
+    const newHead = new ListNode()
+    let node = newHead
     
-    while (list1 && list2){
-        if (list1.val < list2.val){
-            dummy.next = new ListNode(list1.val);
+    while (list1 && list2) {
+        if (list1.val < list2.val) {
+            node.next = list1
             list1 = list1.next
-        } else{
-            dummy.next = new ListNode(list2.val);
+        } else {
+            node.next = list2
             list2 = list2.next
-        };
-        
-        dummy = dummy.next;
-    };
+        }
+        node = node.next
+    }
     
-    if (list1){
-        dummy.next = list1;
-    } else{
-        dummy.next = list2;
-    };
+    if (list1) node.next = list1
+    if (list2) node.next = list2
     
-    return ans.next;
-    
+    return newHead.next
 };
