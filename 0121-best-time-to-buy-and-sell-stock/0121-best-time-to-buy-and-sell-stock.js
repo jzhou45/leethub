@@ -3,17 +3,19 @@
  * @return {number}
  */
 var maxProfit = function(prices) {
-    let maxProfit = 0;
-    let [left, right] = [0, 1];
+    let currMax = 0
+    let [l, r] = [0, 1]
     
-    while (right < prices.length){
-        if (prices[left] < prices[right]){
-            maxProfit = Math.max(maxProfit, prices[right] - prices[left]);
-        } else{
-            left = right;
+    while (r < prices.length) {
+        if (prices[r] < prices[l]) {
+            l = r
+            r = l + 1
+        } else {
+            const currSum = prices[r] - prices[l]
+            if (currSum > currMax) currMax = currSum
+            r ++
         }
-        right ++;
     }
     
-    return maxProfit;
+    return currMax
 };
