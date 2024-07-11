@@ -4,25 +4,14 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-    let hash = {};
+    const counter = {}
     
-    for (let i of s){
-        hash[i] = hash[i] + 1 || 1;
+    for (const char of s) (char in counter) ? counter[char]++ : counter[char] = 1
+    
+    for (const char of t) {
+        if (!(char in counter)) return false
+        counter[char]--
     }
     
-    for (let j of t){
-        if (j in hash){
-            hash[j] --;
-        } else{
-            return false;
-        }
-    }
-    
-    for (let k of Object.values(hash)){
-        if (k !== 0){
-            return false;
-        }
-    }
-    
-    return true;
+    return Object.values(counter).every((count) => count === 0)
 };
