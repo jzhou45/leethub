@@ -3,24 +3,24 @@
  * @return {boolean}
  */
 var isPalindrome = function(s) {
-    const alphanum = new           Set("abcdefghijklmnopqrstuvwxyzABCDEFGHJIKLMNOPQRSTUVWXYZ0123456789".split(""));
+    const alphanum = new Set('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'.split(''))
     
-    let i = 0;
-    let j = s.length - 1;
+    let [l, r] = [0, s.length - 1]
     
-    while (i < j){
-        console.log(s[i], s[j])
-        if (!alphanum.has(s[i])){
-            i ++;
-        } else if (!alphanum.has(s[j])){
-            j --;
-        } else if (s[i].toLowerCase() !== s[j].toLowerCase()){
-            return false;
-        } else{
-            i ++;
-            j --;
+    const isSpace = (char) => char === ' '
+    
+    while (l < r) {
+        if (!(alphanum.has(s[l]))) {
+            l ++
+        } else if (!(alphanum.has(s[r]))) {
+            r --
+        } else if (s[l].toLowerCase() !== s[r].toLowerCase()) {
+            return false
+        } else {
+            l ++
+            r --
         }
     }
     
-    return true;
+    return true
 };
